@@ -7,29 +7,11 @@
   <meta name="keywords" content="">
   <meta name="viewport"
         content="width=device-width, initial-scale=1">
-  <title>Amaze UI Examples</title>
+  <title>微信矩阵</title>
 
   <!-- Set render engine for 360 browser -->
   <meta name="renderer" content="webkit">
-
-  <!-- No Baidu Siteapp-->
-  <meta http-equiv="Cache-Control" content="no-siteapp"/>
-
-  <link rel="icon" type="image/png" href="assets/i/favicon.png">
-
-  <!-- Add to homescreen for Chrome on Android -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
-
-  <!-- Add to homescreen for Safari on iOS -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
-  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
-
-  <!-- Tile icon for Win8 (144x144 + tile color) -->
-  <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
-  <meta name="msapplication-TileColor" content="#0e90d2">
+ 
 
   <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
   <!--
@@ -80,9 +62,15 @@
       border: none;
     }
 
+    #fulian-list .am-u-sm-4 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     .title{
       display: block;
       padding: 10px;
+      font-size: 0.6rem;
     }
     .icon{
       display: block;
@@ -152,14 +140,71 @@
     var fulianItems = [
         { 
           "title":"浦东妇联",
-         "icon":"http://upload-images.jianshu.io/upload_images/675733-5e9d05b1e809a5b6.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1240"
+         "icon":"./assets/img/pd.jpg"
         },
-        { "title":"长宁女性", "icon":""},
-        { "title":"普陀妇联", "icon":""},
-        { "title":"杨浦区妇联", "icon":""},
-        { "title":"静安女性", "icon":""},
-        { "title":"嘉定女性", "icon":""},
-        { "title":"静安女性", "icon":""}
+        { 
+          "title":"长宁女性", 
+          "icon":"./assets/img/cn.jpg"
+        },
+        { 
+          "title":"上海普陀妇联",
+          "icon":"./assets/img/pt.jpg"
+        },
+         
+        { 
+          "title":" 虹口女性全微关注",
+          "icon":"./assets/img/hk.jpg"
+        },
+        { 
+          "title":"杨浦区妇联 ",
+          "icon":"./assets/img/yp.jpg"
+        },
+          
+        { 
+          "title":"静安女性",
+          "icon":"./assets/img/ja.jpg"
+        },
+        { 
+          "title":"嘉定女性", 
+          "icon":"./assets/img/jd.jpg"
+        },
+        { 
+          "title":"金山女性",
+          "icon":"./assets/img/js.jpg"
+        },
+        { 
+          "title":"松江妇联",
+          "icon":"./assets/img/sj.jpg"
+        },
+        { 
+          "title":"青浦女性",
+          "icon":"./assets/img/qp.jpg"
+        },
+        { 
+          "title":"最美半边天",
+          "icon":"./assets/img/zm.jpg"
+        },
+        { 
+          "title":"黄埔女性",
+          "icon":"./assets/img/hp.jpg"
+        },
+        { 
+          "title":"宝山女性",
+          "icon":"./assets/img/bs.jpg"
+        },
+        { 
+          "title":"徐汇女性",
+          "icon":"./assets/img/xh.jpg"
+        },
+        { 
+          "title":"她家他",
+          "icon":"./assets/img/tjt.jpg"
+        },
+        { 
+          "title":"崇明妇联",
+          "icon":"./assets/img/cm.jpg"
+        }
+         
       ];
 
     initItems("fulian-list",fulianItems);
