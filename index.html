@@ -1,0 +1,195 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>Amaze UI Examples</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="assets/i/app-icon72x72@2x.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!--
+  <link rel="canonical" href="http://www.example.com/">
+  -->
+
+  <link rel="stylesheet" href="assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <style>
+    .am-nav-tabs>li{
+      width: 30%;
+      height: 65px;
+      line-height: 65px;
+      word-break:break-all;
+      text-align: center;
+      color: white;
+      background: gray;
+    }
+    .am-nav-tabs>li:nth-child(2){
+      width: 40%;
+       
+    }
+    .am-nav-tabs>li:nth-child(3){
+      float: right;  
+    }
+
+     .am-nav-tabs>li:nth-child(2) a,.am-nav-tabs>li:nth-child(3)  a{
+       padding-top: 20px;
+     }
+    .am-nav-tabs>li.am-active{
+      background: purple
+    }
+
+
+
+    .am-nav-tabs>li>a {
+      
+      color: inherit;
+      border: none;
+    }
+
+    .am-nav-tabs>li.am-active>a, .am-nav-tabs>li.am-active>a:focus, .am-nav-tabs>li.am-active>a:hover{
+        background: transparent;
+        color: inherit;
+        border: none;
+    }
+    .am-tabs-bd{
+      border: none;
+    }
+
+    .title{
+      display: block;
+      padding: 10px;
+    }
+    .icon{
+      display: block;
+      width: 65px;
+      height: 65px;
+      border-radius: 100%;
+
+    }
+   
+
+     
+  </style>
+</head>
+<body>
+<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a
+  href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+<!-- 页面内容 开发时删除 -->
+ 
+ <div class="am-tabs" data-am-tabs="{noSwipe: 1}" id="doc-tab-demo-1">
+  <ul class="am-tabs-nav am-nav am-nav-tabs">
+    <li class="am-active"><a href="javascript: void(0)">区县大口<br/>(各级妇联)</a></li>
+    <li><a href="javascript: void(0)">部门所属机构</a></li>
+    <li><a href="javascript: void(0)">合作联络</a></li>
+  </ul>
+
+  <div class="am-tabs-bd">
+    <div class="am-tab-panel am-active">
+        <div class="am-g am-g-fixed am-margin-top" id="fulian-list"></div>
+    </div>
+    <div class="am-tab-panel">
+      ...
+    </div>
+    <div class="am-tab-panel">
+      ...
+    </div>
+  </div>
+</div>
+   
+
+ 
+
+  <script>
+
+    function initItems(id,items){
+      
+      var tpl = '<div class="am-u-sm-4"><img src="{{icon}}" class="icon"> <span class="title">{{title}}</span></div>';
+     
+      var html = "";
+
+      for(key in items){
+        var item = items[key];
+        html += tpl.replace("{{title}}",item.title).replace("{{icon}}",item.icon);
+      }
+      document.getElementById(id).innerHTML = html;
+
+    }
+
+
+    
+
+
+
+    var fulianItems = [
+        { 
+          "title":"浦东妇联",
+         "icon":"http://upload-images.jianshu.io/upload_images/675733-5e9d05b1e809a5b6.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1240"
+        },
+        { "title":"长宁女性", "icon":""},
+        { "title":"普陀妇联", "icon":""},
+        { "title":"杨浦区妇联", "icon":""},
+        { "title":"静安女性", "icon":""},
+        { "title":"嘉定女性", "icon":""},
+        { "title":"静安女性", "icon":""}
+      ];
+
+    initItems("fulian-list",fulianItems);
+    
+
+  </script>
+
+
+
+
+   
+
+<!-- <footer class="am-margin-top">
+  <hr/>
+  <p class="am-text-center">
+    <small>by The AmazeUI Team.</small>
+  </p>
+</footer> -->
+<!-- 以上页面内容 开发时删除 -->
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+
+</body>
+</html>
