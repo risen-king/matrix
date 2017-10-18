@@ -25,6 +25,7 @@
       width: 30%;
       height: 65px;
       line-height: 65px;
+      padding-top: 20px;
       word-break:break-all;
       text-align: center;
       color: white;
@@ -38,9 +39,7 @@
       float: right;  
     }
 
-     .am-nav-tabs>li:nth-child(2) a,.am-nav-tabs>li:nth-child(3)  a{
-       padding-top: 20px;
-     }
+      
     .am-nav-tabs>li.am-active{
       background: purple
     }
@@ -62,18 +61,21 @@
       border: none;
     }
 
-    #fulian-list .am-u-sm-4 {
+    #fulian-list .am-u-sm-4, #other-list .am-u-sm-4{
         padding-left: 0;
         padding-right: 0;
+        text-align: center;
     }
 
     .title{
       display: block;
       padding: 10px;
       font-size: 0.6rem;
+      height: 4rem;
+      text-align: center;
     }
     .icon{
-      display: block;
+     
       width: 65px;
       height: 65px;
       border-radius: 100%;
@@ -95,9 +97,9 @@
  
  <div class="am-tabs" data-am-tabs="{noSwipe: 1}" id="doc-tab-demo-1">
   <ul class="am-tabs-nav am-nav am-nav-tabs">
-    <li class="am-active"><a href="javascript: void(0)">区县大口<br/>(各级妇联)</a></li>
-    <li><a href="javascript: void(0)">部门所属机构</a></li>
-    <li><a href="javascript: void(0)">合作联络</a></li>
+    <li class="am-active"><a href="javascript: void(0)">姐妹区县</a></li>
+    <li><a href="javascript: void(0)">妇联组织</a></li>
+    <li><a href="javascript: void(0)">其他</a></li>
   </ul>
 
   <div class="am-tabs-bd">
@@ -108,7 +110,9 @@
       ...
     </div>
     <div class="am-tab-panel">
-      ...
+
+      <div class="am-g am-g-fixed am-margin-top" id="other-list"></div>
+      
     </div>
   </div>
 </div>
@@ -132,11 +136,7 @@
 
     }
 
-
-    
-
-
-
+ 
     var fulianItems = [
         { 
           "title":"浦东妇联",
@@ -207,7 +207,73 @@
          
       ];
 
+
+    var otherItems = [
+        { 
+          "title":"巾帼园",
+         "icon":"./assets/img/.jpg"
+        },
+        { 
+          "title":"上海市妇女干部学校",
+         "icon":"./assets/img/.jpg"
+        },
+        { 
+          "title":"上海市科学育儿基地",
+         "icon":"./assets/img/.jpg"
+        },
+        { 
+          "title":"上海市市立幼儿园",
+         "icon":"./assets/img/.jpg"
+        },
+        { 
+          "title":"上海市少年儿童佘山活动营地",
+         "icon":"./assets/img/.jpg"
+        },
+        { 
+          "title":"现代家庭杂志社",
+         "icon":"./assets/img/.jpg"
+        },
+
+        { 
+          "title":"上海妇女研究",
+         "icon":"./assets/img/.jpg"
+        },
+
+        { 
+          "title":"海上妇女之家",
+         "icon":"./assets/img/.jpg"
+        },
+        { 
+          "title":"上海市儿童基金会",
+         "icon":"./assets/img/.jpg"
+        },
+        { 
+          "title":"上海女性社会组织",
+         "icon":"./assets/img/.jpg"
+        },
+        { 
+          "title":"上海女记者",
+         "icon":"./assets/img/.jpg"
+        },
+        { 
+          "title":"上海家政",
+         "icon":"./assets/img/.jpg"
+        },
+         { 
+          "title":"海派旗袍文化",
+         "icon":"./assets/img/.jpg"
+        },
+        { 
+          "title":"闵行鲁冰花家庭教育",
+         "icon":"./assets/img/.jpg"
+        }
+         
+      ];
+
+
     initItems("fulian-list",fulianItems);
+    
+    initItems("other-list",otherItems);
     
 
   </script>
