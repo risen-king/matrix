@@ -61,20 +61,25 @@
       border: none;
     }
 
-    #fulian-list .am-u-sm-4, #other-list .am-u-sm-4{
+
+    .matrix-list .am-u-sm-4{
         padding-left: 0;
         padding-right: 0;
         text-align: center;
     }
 
-    .title{
+    .matrix-list a{
+      color: #000;
+    }
+
+    .matrix-list .title{
       display: block;
       padding: 10px;
       font-size: 0.6rem;
       height: 4rem;
       text-align: center;
     }
-    .icon{
+   .matrix-list  .icon{
      
       width: 65px;
       height: 65px;
@@ -104,14 +109,15 @@
 
   <div class="am-tabs-bd">
     <div class="am-tab-panel am-active">
-        <div class="am-g am-g-fixed am-margin-top" id="fulian-list"></div>
+        <div class="am-g am-g-fixed am-margin-top matrix-list" id="sister-list"></div>
     </div>
     <div class="am-tab-panel">
-      ...
+       <div class="am-g am-g-fixed am-margin-top matrix-list" id="org-list"></div>
+      
     </div>
     <div class="am-tab-panel">
 
-      <div class="am-g am-g-fixed am-margin-top" id="other-list"></div>
+      <div class="am-g am-g-fixed am-margin-top matrix-list" id="other-list"></div>
       
     </div>
   </div>
@@ -124,13 +130,15 @@
 
     function initItems(id,items){
       
-      var tpl = '<div class="am-u-sm-4"><img src="{{icon}}" class="icon"> <span class="title">{{title}}</span></div>';
+      var tpl = '<div class="am-u-sm-4"><a href="{{link}}"><img src="{{icon}}" class="icon"> <span class="title">{{title}}</span></a></div>';
      
       var html = "";
 
       for(key in items){
         var item = items[key];
-        html += tpl.replace("{{title}}",item.title).replace("{{icon}}",item.icon);
+        html += tpl.replace("{{title}}",item.title)
+                  .replace("{{icon}}",item.icon)
+                  .replace("{{link}}",item.link);
       }
       document.getElementById(id).innerHTML = html;
 
@@ -140,69 +148,85 @@
     var fulianItems = [
         { 
           "title":"浦东妇联",
-         "icon":"./assets/img/pd.jpg"
+         "icon":"./assets/img/pd.jpg",
+         "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382001&ver=1&signature=UWPYZ7F12yhaxeZ8ovnFQDDlSxZzeSkDEY6y*wuL6CGvINB4vUg7e2QC8XnAzgXUBIYIGFRch5jhbODO1*-nvA=="
         },
         { 
           "title":"长宁女性", 
-          "icon":"./assets/img/cn.jpg"
+          "icon":"./assets/img/cn.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382016&ver=1&signature=ppmrFxk*1wkZh3OHaXyQpQNw8o826j1azIdx2QCseqqZk7v39JUxgvQLNHh-oRrCv5EvnjCt7Ty2npec7qQPZQ=="
         },
         { 
           "title":"上海普陀妇联",
-          "icon":"./assets/img/pt.jpg"
+          "icon":"./assets/img/pt.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382064&ver=1&signature=jJk53rI8QosHcOCbxUCSj1Z6W8-mfFYEywp0GoI1rivVaNaoJqHML232jJcBKYXrI7ezCaKkZk0u0pCkhmQj0g=="
         },
          
         { 
           "title":" 虹口女性全微关注",
-          "icon":"./assets/img/hk.jpg"
+          "icon":"./assets/img/hk.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382081&ver=1&signature=I6w6dESCeTb9pBetG5MHvj5ySJGMI1SRrOmpcRVwLV8L5mpVSo2ThHhQXBLF7JMc-uHYBdKEUxBif9GGC5ELEw=="
         },
         { 
-          "title":"杨浦区妇联 ",
-          "icon":"./assets/img/yp.jpg"
+          "title":"杨浦区妇联",
+          "icon":"./assets/img/yp.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382099&ver=1&signature=DnBYReC0B4AgW9dxaqGoBAy-MXvcMEBEpWM2ppZs2hOQ8s3OGJYj5p6dEKyd6PU64bndWTuearNAxj6dvIvehw=="
         },
           
         { 
           "title":"静安女性",
-          "icon":"./assets/img/ja.jpg"
+          "icon":"./assets/img/ja.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382113&ver=1&signature=Dn4bkn*BWixxLhrlBfkihuJNrRR34I*-s0wjVZSGchowjWMjwUK2Etcur8xWM4Al7WRXa*qXnTEP8MA6Blcsow=="
         },
         { 
           "title":"嘉定女性", 
-          "icon":"./assets/img/jd.jpg"
+          "icon":"./assets/img/jd.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382126&ver=1&signature=75khyot2G*-hwpQCcbCKZrFyohr4ktElobvk3xWu2iGZlAUHsjf2BqjNNEh15L7vCCO-IQGPrbpksxvtn7giOQ=="
         },
         { 
           "title":"金山女性",
-          "icon":"./assets/img/js.jpg"
+          "icon":"./assets/img/js.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382137&ver=1&signature=0a-rTJH74LEix1GdC5IPaql9pmhKx6xW1OeKLj67J17yA-jk-lM8qWzYvf7gUrF-i-zqHeoIw*V9DpdVvs4t0w=="
         },
         { 
           "title":"松江妇联",
-          "icon":"./assets/img/sj.jpg"
+          "icon":"./assets/img/sj.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382154&ver=1&signature=2tbToL-RlFGjn-XkdTMqDHE-tI4p-e*mdRlzaR3qJm7skWdCSxMPZ6HtKzSSlVHOIky*JYZf5mt50Hpqn3uGdQ=="
         },
         { 
           "title":"青浦女性",
-          "icon":"./assets/img/qp.jpg"
+          "icon":"./assets/img/qp.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382167&ver=1&signature=SLPDTVJDibIYalVe-ikXcvzdM3x1WvIxwWalv*2qpxaL6t*YavH0LH8z1O2jnHI9lCzDSeA6vIoRxJoSi6jPGg=="
         },
         { 
           "title":"最美半边天",
-          "icon":"./assets/img/zm.jpg"
+          "icon":"./assets/img/zm.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382186&ver=1&signature=jPX*SARxNCFFR4LMovhutN-IvP41q-Pq7zsVgHLlmsYu*i3jPAW1wHohSTQ4j-Nt0WV9FC3XsKWzpadDSAcyYQ=="
         },
         { 
           "title":"黄埔女性",
-          "icon":"./assets/img/hp.jpg"
+          "icon":"./assets/img/hp.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382200&ver=1&signature=wx3IusMWKSzIZCw96-KrIHKkDra0FeT7wjnFr3Gw6u3j5aEYVECRzxe6tQ5z3mJOsrzXvXlfgq1p9eQ*RChitA=="
         },
         { 
           "title":"宝山女性",
-          "icon":"./assets/img/bs.jpg"
+          "icon":"./assets/img/bs.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382235&ver=1&signature=3QCBZQ4SUarVPVSZMSmmRjjIJ5ZEv1w6u-qDdoQRrOlDfK4inRcXqEd7NIowEwonnnO4y8*0DjuDwYKapAi06g=="
         },
         { 
           "title":"徐汇女性",
-          "icon":"./assets/img/xh.jpg"
+          "icon":"./assets/img/xh.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382215&ver=1&signature=YNG5IJC5h6wpZNNRlC8GJbIbT7JeZTYxMQG5mKmaHjek1RFB667eagOW*1zrwb*WEy5C33VMkrAU3ozk3whhBA=="
         },
         { 
           "title":"她家他",
-          "icon":"./assets/img/tjt.jpg"
+          "icon":"./assets/img/tjt.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382253&ver=1&signature=yH8MGqzF3vlPbwUwZj2aWfGTW988TeQBWWHTsDWOE5N3yF51E8T2XVAv6rQVuNxPa7oA6btMzlxrUt7y*s1csA=="
         },
         { 
           "title":"崇明妇联",
-          "icon":"./assets/img/cm.jpg"
+          "icon":"./assets/img/cm.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382266&ver=1&signature=If1gLQDwEpvrOqIunWi6pRWzVED*8tqdLeJsNq66Flp3TGhBlSlX8YvJ0gSUwd4bZD3aXOKkMhUdMJ2QW3t2Sg=="
         }
          
       ];
@@ -211,68 +235,80 @@
     var otherItems = [
         { 
           "title":"巾帼园",
-         "icon":"./assets/img/.jpg"
+          "icon":"./assets/img/jgy.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508380652&ver=1&signature=wbCvTCNQ1TGcs2BAEo68X7clP2Mu3-HIzYELGoqQpj5UdrPKmBUYtxtofz9lAe7Trq3b0040eCk8HdQFGY0m4g==",
         },
         { 
           "title":"上海市妇女干部学校",
-         "icon":"./assets/img/.jpg"
+          "icon":"./assets/img/shfngbxx.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508380712&ver=1&signature=g3rqLJamsOcpw5i1fPu3PJbhkorsSeAzuosfBp6YWyfFVaxvizygo*QZFV8V7LdmHFZWM2dNTMUIoy7jlgFQsA=="
         },
         { 
           "title":"上海市科学育儿基地",
-         "icon":"./assets/img/.jpg"
+          "icon":"./assets/img/shkxyejd.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508380850&ver=1&signature=O-gp7crcT5L1zIgPTxrv2LqGpdwdwzGpZb28*o-hU-c4OUuermd-Ea7VXqHY8vDHEln67Rzj-cJYlwkbGhrV1w=="
         },
         { 
           "title":"上海市市立幼儿园",
-         "icon":"./assets/img/.jpg"
+          "icon":"./assets/img/shslyey.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508380780&ver=1&signature=KFO1I*laQ8Ac7mHTO1rYolWE0v3V5HYbhkVRCMpeIaBSt0IFdAz3tjprLJklJjOABnR*6JS8VIhKbZyFlen*-g=="
         },
         { 
           "title":"上海市少年儿童佘山活动营地",
-         "icon":"./assets/img/.jpg"
+          "icon":"./assets/img/shseyd.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382746&ver=1&signature=R8uGZHmjRsNSiWTB7viqsCu1A83iFSCIVAHMiCHfHI9UdciwFODkzvY2BY4kSFVlvtOW55kruWBSOIxWVCID3g=="
         },
         { 
           "title":"现代家庭杂志社",
-         "icon":"./assets/img/.jpg"
+          "icon":"./assets/img/xdjtzz.jpg",
+           "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508382891&ver=1&signature=Q5t6SJfe8BakuhTixHIwQINJ*9y89442*DeIjQdRazCUkVjKB7UvBmtWjc-FKtKKS*BbhyYJuZl1D0E-5ImnAA=="
         },
 
         { 
           "title":"上海妇女研究",
-         "icon":"./assets/img/.jpg"
+          "icon":"./assets/img/shfnyjs.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508381023&ver=1&signature=-Q2OG3jAZpn47osVEtUo0IEtUPUJt9AOO-TooCwNwt-R9mGB1x8wRSIAi6ctX7Nto0P7CqBXaL6adjyK9RwdXw=="
         },
 
         { 
           "title":"海上妇女之家",
-         "icon":"./assets/img/.jpg"
+          "icon":"./assets/img/shetjkjjh.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508381094&ver=1&signature=7xZkwoF3KnkgEAqNXcSOqjkG83NXfumXv*IYlTo5*4unJkpchQ3VIwsJjzpYHt-G1f5PyocWjTz*c*O-K9O1DQ=="
         },
         { 
-          "title":"上海市儿童基金会",
-         "icon":"./assets/img/.jpg"
+          "title":"上海市儿童健康基金会",
+          "icon":"./assets/img/shetjkjjh.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508381193&ver=1&signature=FZaRsvKMZkesI6GktkyD4g4q*Lrp9dhnfCcqtsd4Ok89euldNNRBLhG8*AbN3xTmVODtCKwodHDeh8v1bYssPg=="
         },
         { 
           "title":"上海女性社会组织",
-         "icon":"./assets/img/.jpg"
+          "icon":"./assets/img/shnxshzz.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508381293&ver=1&signature=n637Qj2dw0VzvVpSpUKbTBTnW0lEJgzlEgEMTkREH0NCeyAqRO3M1C6GzltoRg9LE*1MmqfHOCn*hRuTwK18aQ=="
         },
         { 
           "title":"上海女记者",
-         "icon":"./assets/img/.jpg"
+          "icon":"./assets/img/shnjz.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508381336&ver=1&signature=4F*xr4v5ddue8XFNAJ0o4lNWq3FjdkSiLBjgQ*YDrYdir*6zgodDprvo8FX23HOq85Q4SSGHdZstKNaUFNjvfQ=="
         },
         { 
           "title":"上海家政",
-         "icon":"./assets/img/.jpg"
+          "icon":"./assets/img/shjz.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508381383&ver=1&signature=xatAs4qofz-xWXQ13BfLew9pMfKG5sFpadAo3yTSISxHGLJwJvOT5csSN43iczx2p9HJ3xh8*b-suWsf7E5BCw=="
         },
          { 
           "title":"海派旗袍文化",
-         "icon":"./assets/img/.jpg"
+          "icon":"./assets/img/hpqpwh.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508381456&ver=1&signature=zwXZ33jLXW5cq*LAYSv007BRqzDwXMjPGaKgowhcpa0iiiJClMeacPXqTiGmnOR2QQA*p7T-cb89TD9XaTkhRg=="
         },
         { 
           "title":"闵行鲁冰花家庭教育",
-         "icon":"./assets/img/.jpg"
+          "icon":"./assets/img/lbhjtjy.jpg",
+          "link":"https://mp.weixin.qq.com/profile?src=3&timestamp=1508381508&ver=1&signature=vl248wRWAiopulZPDmHRSEAgZ*QEnXXmnwy9HW*bMQhFNyzJ0k79yFFoA0PoH2hEgSRqY-ZRINwV7UQsvkQFwA=="
         }
          
       ];
 
-
-    initItems("fulian-list",fulianItems);
-    
+    initItems("sister-list",fulianItems);
     initItems("other-list",otherItems);
     
 
